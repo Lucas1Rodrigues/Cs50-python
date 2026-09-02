@@ -1,7 +1,7 @@
 import os
-path ='C:/Users/ACER/Documents/estudos/estudosPython/os/pasta_teste/Projeto/documentos'
-print(os.getcwd())
+path ='C:/Users/ACER/Documents/estudos/estudosPython/'
 
 for root, subFolder, filename in os.walk(path):
-    for folder in subFolder:
-        print("pasta encontrado:",folder)
+    for f in filename:
+       if f.endswith(".py"):
+           print("Documento: ", f)
