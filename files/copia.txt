@@ -1,0 +1,3 @@
+Estou estudando Python.
+Python é muito interessante.
+Gosto de Python.
