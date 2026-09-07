@@ -1,0 +1,15 @@
+Exercício 4 — Função que sempre finaliza
+
+Crie uma função chamada abrir_arquivo(nome) que tente abrir um arquivo de texto.
+
+Ela deve:
+
+imprimir o conteúdo se o arquivo existir;
+
+tratar FileNotFoundError;
+
+usar finally para imprimir:
+
+Tentativa de abertura encerrada.
+
+Chame a função no programa principal.
