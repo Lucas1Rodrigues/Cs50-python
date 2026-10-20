@@ -13,6 +13,7 @@ class Livro:
                       if not self.fimDoLivro():
                             self.paginaAtual += 1
                             print(f"Página{self.paginaAtual} :arrow_forward: ")
+                            sleep(0.2)
                             cont += 1
                 print(f"voce avancou {cont} páginas")
     def fimDoLivro(self):
@@ -20,7 +21,7 @@ class Livro:
 
 livro = Livro(10)
 livro.passar_Pagina(2)
-livro.passar_Pagina(2)
+livro.passar_Pagina(5)
 
 
 
