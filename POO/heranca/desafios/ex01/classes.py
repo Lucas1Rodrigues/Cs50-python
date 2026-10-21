@@ -8,7 +8,7 @@ class Poligono(ABC):
         pass
 
     @abstractmethod
-    def area():
+    def area(self):
         pass
 
 class quadrado(Poligono):
@@ -25,7 +25,7 @@ class quadrado(Poligono):
     def area(self):
         return self.lado*self.lado
 
-class circulo(Poligono):
+class Circulo(Poligono):
     pi = 3.14151
     def __init__(self, raio):
         super().__init__(0)

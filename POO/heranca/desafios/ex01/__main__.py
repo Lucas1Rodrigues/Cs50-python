@@ -1,12 +1,12 @@
 from classes import *
 def main():
-    c1 = circulo(20)
+    c1 = Circulo(20)
 
-    print(f"Perimetro: {c1.perimetro()}\n Area: {c1.area()}")
-
-
+    print(f"Perimetro: {c1.perimetro():.2f}\nArea: {c1.area():.2f}")
 
 
 
-if __name__ == "__main.py":
+
+
+if __name__ == "__main__":
     main()
