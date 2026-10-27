@@ -26,14 +26,14 @@ class Horista(Funcionario):
     def calc_sal(self):
         self.salarioBruto = self.hora * self.valorhora
         self.salarioLiquido = self.salarioBruto*self.inss
-        print(Panel(f"O funcionário [yellow]{self.nome}[/] recebe R${self.salarioLiquido:.2f} por mês e R${self.valorhora} por hora, {self.analisar_sal():.2f} salários mínimos", title="HORISTA"))
+        print(Panel(f"O funcionário [yellow]{self.nome}[/] recebe R${self.salarioLiquido:.1f} por mês e R${self.valorhora} por hora, {self.analisar_sal():.1f} salários mínimos", title="HORISTA"))
 
 class Mensalista(Funcionario):
     def __init__(self, nome="", salarioBruto=0):
         super().__init__(nome= nome,salarioBruto = salarioBruto)
         
     def calc_sal(self):    
-        print(Panel(f"O funcionário [yellow]{self.nome}[/] recebe R${self.salarioLiquido:.2f} por mês e {self.analisar_sal():.2f} salários mínimos", title="Mensalista"))
+        print(Panel(f"O funcionário [yellow]{self.nome}[/] recebe R${self.salarioLiquido:.1f} por mês e {self.analisar_sal():.1f} salários mínimos", title="Mensalista"))
     
         
 
