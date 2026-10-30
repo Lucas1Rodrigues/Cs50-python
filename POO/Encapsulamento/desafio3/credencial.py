@@ -1,5 +1,5 @@
 from hashlib import sha256
-from credencial import Credencial
+from rich import print
 class Credencial:
     def __init__(self):
         
@@ -11,11 +11,16 @@ class Credencial:
     
     @senha.setter
     def senha(self,chave):
-        self.senha = sha256(chave.encode('utf-8')).hexdigest()
+        if len(chave) > 0:
+            self.__hash = sha256(chave.encode('utf-8')).hexdigest()
+        else:
+            raise ValueError("Senha inválida")
 
     def validar(self,chave):
-        if chave == self.senha:
+        usuario = sha256(chave.encode('utf-8')).hexdigest()
+        if usuario == self.__hash:
             print("[green]ACESSO LIBERADO![/]")
+            return True
         else:
             print("[red]ACESSO NEGADO![/]")
-        
+            return False
