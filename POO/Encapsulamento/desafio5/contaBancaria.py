@@ -1,12 +1,17 @@
 from hashlib import sha256
 from rich import print
 class ContaBancaria:
-    def __init__(self,id='',titular='',saldo=0):
+    def __init__(self,id='',titular='',saldo=0,senha = None):
         self._id = id
         self._titular = titular
         self.__saldo = saldo
-        self.__hash = None
+        if senha is None:
+            senha = self.pedeSenha()
+        self.__hash = sha256(senha.encode('utf-8')).hexdigest()
 
+    def __str__(self):
+        return f'A conta {self._id} possui o saldo de R${self.__saldo:,.2f}'
+        
     @property
     def nome(self):
         return self._titular
@@ -39,11 +44,16 @@ class ContaBancaria:
 
 
     def pedeSenha(self):
-        print("[yellow]Digite sua senha: [/]")
-        senhaInput = input()
+        from pwinput import pwinput
+        while True:
+            senhaInput = str(pwinput("Senha:"))
+            if len(senhaInput) >= 6:
+                break
         return senhaInput
 
     def sacar(self,saque):
+        print("[yellow]Digite sua senha para o saque" \
+        ": [/]")
         senhaInput = self.pedeSenha()
         if self.__saldo < saque:
             raise PermissionError("você nao tem fundos suficientes para o saque, verifique seu saldo")
